@@ -1,0 +1,39 @@
+.stories {
+    height: 10rem;
+    width: 100%;
+    max-width: 100rem;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        height: 1rem;
+        border-radius: 30%;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    scrollbar-color: rgb(31, 64, 185);
+    display: flex;
+    align-items: flex-end;
+    margin: auto;
+    span {
+        margin: 1px;
+        width: 8rem;
+
+        img {
+            width: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+            box-shadow: 0.5rem 0.5rem rgba(174, 160, 160, 0.135);
+            &:hover {
+                filter: brightness(95%);
+                & ~ p {
+                    color: rgb(125, 125, 238);
+                    text-decoration: underline;
+                }
+            }
+        }
+        p {
+            text-align: center;
+            width: 7rem;
+        }
+    }
+}
