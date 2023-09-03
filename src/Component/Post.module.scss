@@ -15,7 +15,6 @@
         align-items: center;
         display: flex;
         margin-bottom: 1rem;
-
         span {
             flex-grow: 1;
             display: flex;
@@ -45,21 +44,84 @@
         justify-content: center;
     }
     .caption {
+        &-icon {
+            display: flex;
+            span {
+                flex-grow: 1;
+                margin-left: 1rem;
+            }
+            svg {
+                font-size: 1.5rem;
+                margin-right: 1rem;
+            }
+        }
+        &-action {
+            display: flex;
+            align-items: center;
+            input {
+                flex-grow: 1;
+                height: 4rem;
+                border: none;
+                padding-left: 1rem;
+                font-size: 1.5rem;
+                &:focus {
+                    outline: none;
+                }
+            }
+            svg {
+                font-size: 1.5rem;
+                color: rgb(203, 192, 171);
+            }
+            button {
+                border: none;
+                background-color: transparent;
+                height: 2rem;
+                font-size: 1.5rem;
+                color: rgb(203, 192, 171);
+            }
+        }
         .comment {
             width: 100%;
             height: 10rem;
             background-color: rgb(216, 205, 187);
             border-radius: 5px;
         }
-        input {
-            width: 100%;
-            height: 4rem;
-            border: none;
-            padding-left: 1rem;
-            font-size: 1.5rem;
-            &:focus {
-                outline: none;
+    }
+}
+.miniProfile {
+    width: 100%;
+    .profile {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        border: solid 1px rgba(142, 129, 105, 0.257);
+        border-radius: 5px;
+        box-shadow: 0.5rem 0.5rem rgba(142, 100, 100, 0.143);
+        img {
+            border: solid 1px rgba(174, 162, 139, 0.373);
+            padding: 1px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        div {
+            flex-grow: 1;
+            h2 {
+                &:hover {
+                    text-decoration: underline;
+                }
             }
+            p {
+                color: rgb(113, 109, 102);
+            }
+            padding-left: 3rem;
+        }
+        button {
+            height: 3rem;
+            width: 4rem;
+            background: transparent;
+            border: none;
+            font: 1.5rem;
+            color: blue;
         }
     }
 }
@@ -68,7 +130,7 @@
     max-width: 100rem;
     margin: auto;
     display: grid;
-    grid-template-columns: minmax(1fr, 65rem) 1fr;
+    grid-template-columns: minmax(0, 65rem) 1fr;
     .postDisplay {
         max-height: 100rem;
         overflow-y: scroll;

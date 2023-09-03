@@ -2,7 +2,33 @@
 import style from "./Post.module.scss";
 import { FC } from "react";
 import { faker } from "@faker-js/faker";
-import { BsThreeDots } from "react-icons/bs";
+import { BsThreeDots, BsBookmark, BsEmojiSmile } from "react-icons/bs";
+import { AiOutlineHeart } from "react-icons/ai";
+import { FaRegCommentDots } from "react-icons/fa";
+
+interface MiniProfileProps {
+  userImage: string;
+  userName: string;
+}
+
+export const MiniProfile: FC<MiniProfileProps> = ({
+  userImage,
+  userName,
+}): JSX.Element => {
+  return (
+    <div className={style.miniProfile}>
+      <div className={style.profile}>
+        <img src={userImage} alt="cat" width={100} height={100} />
+        <div>
+          <h2>{userName}</h2>
+          <p>Welcome to Instagram</p>
+        </div>
+        <button>Sign Out</button>
+      </div>
+    </div>
+  );
+};
+
 interface PostCardProps {
   id: number;
   userName: string;
@@ -31,10 +57,22 @@ export const PostCard: FC<PostCardProps> = ({
         <img src={img} alt="posting not found" />
       </div>
       <div className={style.caption}>
-        <p># {caption}</p>
-        <span></span>
+        <div className={style["caption-icon"]}>
+          <span>
+            <AiOutlineHeart />
+            <FaRegCommentDots />
+          </span>
+          <BsBookmark />
+        </div>
+        <p>
+          {userName} # {caption}
+        </p>
         <div className={style.comment}></div>
-        <input type="text" placeholder="comment" />
+        <form className={style["caption-action"]}>
+          <BsEmojiSmile />
+          <input type="text" placeholder="comment" />
+          <button>Posts</button>
+        </form>
       </div>
     </div>
   );
@@ -58,6 +96,10 @@ const Post: FC<PostProps> = (): JSX.Element => {
           return <PostCard key={post.id} {...post} />;
         })}
       </div>
+      <MiniProfile
+        userImage="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Savannah_Cat_portrait.jpg/1200px-Savannah_Cat_portrait.jpg"
+        userName="jeri"
+      />
     </section>
   );
 };
