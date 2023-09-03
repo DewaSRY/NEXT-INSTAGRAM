@@ -25,6 +25,7 @@ const Header: FC<HeaderProps> = (): JSX.Element => {
       <span>
         <BsHouseFill />
         <AiFillPlusCircle />
+
         <img
           src={
             "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Savannah_Cat_portrait.jpg/1200px-Savannah_Cat_portrait.jpg"

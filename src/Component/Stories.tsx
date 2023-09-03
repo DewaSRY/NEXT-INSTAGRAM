@@ -24,10 +24,10 @@ export const Stories: FC<StoriesProps> = (): JSX.Element => {
   return (
     <div className={style.stories}>
       {story.map((user, id) => (
-        <span key={id}>
+        <div key={id}>
           <img src={user.img} width={70} height={70} alt={user.userName} />
           <p>{user.userName}</p>
-        </span>
+        </div>
       ))}
     </div>
   );

@@ -1,11 +1,10 @@
 .stories {
-    height: 10rem;
+    height: 12rem;
     width: 100%;
     max-width: 100rem;
     overflow-x: scroll;
     &::-webkit-scrollbar {
         height: 1rem;
-        border-radius: 30%;
     }
     &::-webkit-scrollbar-thumb {
         background-color: transparent;
@@ -14,14 +13,14 @@
     display: flex;
     align-items: flex-end;
     margin: auto;
-    span {
-        margin: 1px;
+    div {
+        margin: 0.5rem;
         width: 8rem;
-
         img {
             width: 100%;
             border-radius: 5px;
             object-fit: cover;
+            border: solid 0.2rem red;
             box-shadow: 0.5rem 0.5rem rgba(174, 160, 160, 0.135);
             &:hover {
                 filter: brightness(95%);
