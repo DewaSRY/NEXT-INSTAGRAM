@@ -1,0 +1,43 @@
+.suggestion {
+    border: solid 1px rgb(195, 184, 164);
+    box-shadow: 0.5rem 0.5rem rgba(152, 142, 124, 0.295);
+    border-radius: 5px;
+    margin-top: 1rem;
+    &-heading {
+        display: flex;
+        p {
+            flex-grow: 1;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            color: blue;
+        }
+    }
+    &-card {
+        display: flex;
+        align-items: center;
+        img {
+            border-radius: 50%;
+            object-fit: cover;
+            border: solid 1px red;
+            padding: 1px;
+        }
+        span {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h3 {
+                font-size: 1rem;
+                margin-bottom: 0;
+                transform: translateY(50%);
+            }
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            color: blue;
+        }
+    }
+}

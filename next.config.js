@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["upload.wikimedia.org", "th.bing.com"],
+    loader: "akamai",
+    path: "https://upload.wikimedia.org/wikipedia/commons/thumb",
+    domains: ["upload.wikimedia.org"],
   },
 };
 

@@ -5,6 +5,7 @@ import { faker } from "@faker-js/faker";
 import { BsThreeDots, BsBookmark, BsEmojiSmile } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
+import Suggestion from "./Suggestion";
 
 interface MiniProfileProps {
   userImage: string;
@@ -25,6 +26,7 @@ export const MiniProfile: FC<MiniProfileProps> = ({
         </div>
         <button>Sign Out</button>
       </div>
+      <Suggestion />
     </div>
   );
 };
