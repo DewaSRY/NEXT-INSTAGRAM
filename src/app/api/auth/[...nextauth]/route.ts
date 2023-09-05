@@ -14,4 +14,5 @@ export const authOptions = {
     error: "/404",
   },
 };
+
 export default NextAuth(authOptions);

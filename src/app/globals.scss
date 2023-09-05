@@ -1,0 +1,40 @@
+:root {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+::-webkit-scrollbar {
+    height: 1rem;
+}
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+//The 1300px Mark break Point
+@mixin media-desktop {
+    @media screen and (min-width: break-point(break-point-desktop)) {
+        @content;
+    }
+}
+//The 800px Mark break Point
+@mixin media-tablet {
+    @media screen and (max-width: break-point(break-point-tablet)) {
+        @content;
+    }
+}
+//The 600px Mark break Point
+@mixin media-medium {
+    @media screen and (max-width: break-point(break-point-medium)) {
+        @content;
+    }
+}
+//The 400px Mark break Point
+@mixin media-small {
+    @media screen and (max-width: break-point(break-point-small)) {
+        @content;
+    }
+}
+body {
+    display: grid;
+    /* max-width: 100rem; */
+    /* margin: auto; */
+    grid-template-columns: 1fr repeat(5, [col-start] minmax(0, 20rem) [col-end]) 1fr;
+}

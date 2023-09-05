@@ -1,0 +1,78 @@
+.miniProfile {
+    grid-column: col-end 3 / col-end 5;
+    justify-self: center;
+    width: calc(20rem + 10vw);
+    padding: 1rem;
+    height: min-content;
+    border: solid 1px rgba(142, 129, 105, 0.257);
+    border-radius: 5px;
+    box-shadow: 0.5rem 0.5rem rgba(142, 100, 100, 0.143);
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+            border: solid 1px rgba(174, 162, 139, 0.373);
+            padding: 1px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        div {
+            h2 {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            p {
+                color: rgb(113, 109, 102);
+            }
+            padding-left: 3rem;
+        }
+        button {
+            height: 3rem;
+            width: 4rem;
+            background: transparent;
+            border: none;
+            font: 1.5rem;
+            color: blue;
+        }
+    }
+}
+.suggestion {
+    margin-top: 1rem;
+    &-heading {
+        display: flex;
+        p {
+            flex-grow: 1;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            color: blue;
+        }
+    }
+}
+.profile {
+    display: grid;
+    grid-template-columns: 1fr minmax(8rem, 70%) 1fr;
+    img {
+        border-radius: 50%;
+        object-fit: cover;
+        border: solid 1px red;
+        padding: 1px;
+    }
+    span {
+        width: clamp(8rem, 12rem, 20rem);
+        align-items: start;
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 0;
+            transform: translateY(50%);
+        }
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        color: blue;
+    }
+}

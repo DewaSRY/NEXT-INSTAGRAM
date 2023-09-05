@@ -1,15 +1,16 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Header from "@/Component/Header";
-import Feed from "@/Component/Feed";
-import Post from "@/Component/Post";
+import Stories from "@/Component/Feed/Stories";
+import Post from "@/Component/Feed/Posts";
+import MiniProfile from "@/Component/Feed/MiniProfile";
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <Feed />
+    <>
+      <Stories />
       <Post />
-    </main>
+      <MiniProfile
+        userImage="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Savannah_Cat_portrait.jpg/1200px-Savannah_Cat_portrait.jpg"
+        userName="jeri"
+      />
+    </>
   );
 }

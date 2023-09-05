@@ -1,9 +1,0 @@
-:root{
-    box-sizing: border-box;
-}
-::-webkit-scrollbar {
-    height: 1rem;
-}
-::-webkit-scrollbar-thumb {
-    background-color: transparent;
-}

@@ -1,0 +1,30 @@
+.stories {
+    grid-column: col-start 1 / col-end 5;
+    // margin: auto;
+    overflow-x: scroll;
+    display: flex;
+}
+
+.storeys-card {
+    margin: auto;
+    width: 8rem;
+    img {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        object-fit: cover;
+        border: solid 0.2rem red;
+        box-shadow: 0.5rem 0.5rem rgba(174, 160, 160, 0.135);
+        &:hover {
+            filter: brightness(95%);
+            & ~ p {
+                color: rgb(125, 125, 238);
+                text-decoration: underline;
+            }
+        }
+    }
+    p {
+        text-align: center;
+        width: 7rem;
+    }
+}

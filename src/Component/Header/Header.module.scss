@@ -1,18 +1,15 @@
 .header {
+    grid-column: col-start 1 / col-end 5;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    max-width: 100rem;
-    margin: auto;
     box-shadow: 0.5rem 0.5rem rgba(113, 72, 72, 0.098);
     border: solid 1px rgb(86, 55, 55);
-    height: 4rem;
+    height: max-content;
     border-radius: 7px;
-    position: sticky;
     background-color: rgba(255, 251, 244, 0.642);
     top: 0;
-    img {
+    &-logo {
         object-fit: contain;
         cursor: pointer;
     }
@@ -20,9 +17,6 @@
         position: relative;
         width: 16rem;
         height: 3.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         input {
             background-color: rgba(255, 251, 244, 0.642);
             width: 100%;
@@ -48,11 +42,12 @@
             color: rgb(181, 153, 153);
         }
     }
-    span {
+    &-menu {
+        width: calc(15rem + 5vw);
         display: flex;
         align-items: center;
+        justify-content: space-evenly;
         font-size: 2rem;
-        margin-right: 1rem;
         svg {
             &:hover {
                 transform: scale(1.1);

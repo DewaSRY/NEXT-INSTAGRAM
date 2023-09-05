@@ -2,8 +2,12 @@
 const nextConfig = {
   images: {
     loader: "akamai",
-    path: "https://upload.wikimedia.org/wikipedia/commons/thumb",
-    domains: ["upload.wikimedia.org"],
+    path: "",
+    domains: [
+      "upload.wikimedia.org",
+      "i.pravatar.cc",
+      "avatars.githubusercontent.com",
+    ],
   },
 };
 

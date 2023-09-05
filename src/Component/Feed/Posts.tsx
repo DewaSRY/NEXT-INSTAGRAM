@@ -1,36 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import style from "./Post.module.scss";
-import { FC } from "react";
 import { faker } from "@faker-js/faker";
+import { FC, useEffect, useState } from "react";
+
 import { BsThreeDots, BsBookmark, BsEmojiSmile } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
-import Suggestion from "./Suggestion";
-
-interface MiniProfileProps {
-  userImage: string;
-  userName: string;
-}
-
-export const MiniProfile: FC<MiniProfileProps> = ({
-  userImage,
-  userName,
-}): JSX.Element => {
-  return (
-    <div className={style.miniProfile}>
-      <div className={style.profile}>
-        <img src={userImage} alt="cat" width={100} height={100} />
-        <div>
-          <h2>{userName}</h2>
-          <p>Welcome to Instagram</p>
-        </div>
-        <button>Sign Out</button>
-      </div>
-      <Suggestion />
-    </div>
-  );
-};
-
 interface PostCardProps {
   id: number;
   userName: string;
@@ -40,7 +16,6 @@ interface PostCardProps {
 }
 
 export const PostCard: FC<PostCardProps> = ({
-  id,
   userImg,
   userName,
   img,
@@ -55,11 +30,19 @@ export const PostCard: FC<PostCardProps> = ({
         </span>
         <BsThreeDots />
       </div>
+
       <div className={style.post}>
-        <img src={img} alt="posting not found" />
+        <img
+          style={{
+            objectFit: "cover",
+          }}
+          src={img}
+          alt="posting not found"
+        />
       </div>
+
       <div className={style.caption}>
-        <div className={style["caption-icon"]}>
+        <div className={style["caption-tool"]}>
           <span>
             <AiOutlineHeart />
             <FaRegCommentDots />
@@ -69,7 +52,6 @@ export const PostCard: FC<PostCardProps> = ({
         <p>
           {userName} # {caption}
         </p>
-        <div className={style.comment}></div>
         <form className={style["caption-action"]}>
           <BsEmojiSmile />
           <input type="text" placeholder="comment" />
@@ -81,7 +63,7 @@ export const PostCard: FC<PostCardProps> = ({
 };
 
 interface PostProps {}
-const posts = new Array(10).fill(null).map(() => {
+const postsArr = new Array(10).fill(null).map(() => {
   return {
     id: Math.ceil(Math.random() * 100),
     userName: faker.person.fullName(),
@@ -90,18 +72,23 @@ const posts = new Array(10).fill(null).map(() => {
     caption: "nice picture",
   };
 });
+interface postsData {
+  id: number;
+  userName: string;
+  userImg: string;
+  img: string;
+  caption: string;
+}
 const Post: FC<PostProps> = (): JSX.Element => {
+  const [posts, setPosts] = useState<postsData[]>([]);
+  useEffect(() => {
+    setPosts(postsArr);
+  }, []);
   return (
     <section className={style.postPage}>
-      <div className={style.postDisplay}>
-        {posts.map((post) => {
-          return <PostCard key={post.id} {...post} />;
-        })}
-      </div>
-      <MiniProfile
-        userImage="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Savannah_Cat_portrait.jpg/1200px-Savannah_Cat_portrait.jpg"
-        userName="jeri"
-      />
+      {posts.map((post) => {
+        return <PostCard key={post.id} {...post} />;
+      })}
     </section>
   );
 };
